@@ -63,7 +63,7 @@ GTop - Perl interface to libgtop
 
 Perl interface to libgtop:
 
- http://home-of-linux.org/gnome/libgtop/
+ http://ftp.gnome.org/pub/gnome/sources/libgtop/
 
 =head1 CLASSES
 

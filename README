@@ -5,7 +5,7 @@
 
 this package is a Perl interface to libgtop:
 
-http://home-of-linux.org/gnome/libgtop/
+http://ftp.gnome.org/pub/gnome/sources/libgtop/
 
 see also: Stas Bekman's Apache::VMonitor
 http://www.cpan.org/modules/by-module/Apache/
