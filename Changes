@@ -1,4 +1,7 @@
-0.13 - Mon Apr 26 23:28:44 PDT 2004
+0.13 - Wed Apr 28 12:36:59 PDT 2004
+
+- Solaris doesn't have a typedef for u_int64_t, try to add one [Pete
+  Geenhuizen <pgeenhuizen@carolina.rr.com>]
 
 - Makefile.PL cleanups by Radoslaw Zielinski <radek@karnet.pl>.
 

@@ -259,6 +259,7 @@ my($inc, $libs, $defines) = get_glibtop_config();
 if (DEBUG) {
     warn "Using INC: $inc\n";
     warn "Using LIBS: $libs\n";
+    warn "Using DEFINE: $defines\n";
 }
 
 WriteMakefile(

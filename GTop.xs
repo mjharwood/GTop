@@ -4,6 +4,11 @@
 #include "XSUB.h"
 #include "ppport.h"
 
+/* Solaris doesn't have u_int64_t type */
+#ifndef u_int64_t
+#define u_int64_t unsigned long long int
+#endif
+
 #include <glib.h>
 #include <glibtop.h>
 #include <glibtop/open.h>
