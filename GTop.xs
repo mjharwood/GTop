@@ -18,19 +18,28 @@
 #define GTOP_TRACE(a)
 #endif
 
-#define trace_malloc(self) \
-GTOP_TRACE(fprintf(stderr, "malloc 0x%lx %d %ld:%s\n", (unsigned long)self, \
-		   __LINE__, (long)PL_curcop->cop_line, \
-		   SvPVX(GvSV(PL_curcop->cop_filegv))))
+#ifdef USE_ITHREADS
+#define cop_file PL_curcop->cop_file
+#else
+#define cop_file SvPVX(GvSV(PL_curcop->cop_filegv))
+#endif
 
-#define trace_free(self) \
-GTOP_TRACE(fprintf(stderr, "free 0x%lx %d %ld:%s\n", (unsigned long)self, \
-		   __LINE__, (long)PL_curcop->cop_line, \
-		   SvPVX(GvSV(PL_curcop->cop_filegv))))
+#define trace_malloc(self)                                  \
+    GTOP_TRACE(fprintf(stderr, "malloc 0x%lx %d %ld:%s\n",  \
+                       (unsigned long)self,                 \
+                       __LINE__, (long)PL_curcop->cop_line, \
+                       cop_file))
+
+#define trace_free(self)                                    \
+    GTOP_TRACE(fprintf(stderr, "free 0x%lx %d %ld:%s\n",    \
+                       (unsigned long)self,                 \
+                       __LINE__, (long)PL_curcop->cop_line, \
+                       cop_file))
+
 
 #define my_free(a) \
-trace_free(a); \
-safefree(a)
+    trace_free(a); \
+    safefree(a)
 
 #define my_malloc safemalloc
 

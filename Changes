@@ -1,5 +1,7 @@
 0.12 - 
 
+tracing is now possible with threaded perls [Stas]
+
 libgtop sources are now can be found at
 http://ftp.gnome.org/pub/gnome/sources/libgtop/ [Stas]
 
