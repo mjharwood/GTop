@@ -1,5 +1,7 @@
 0.12 - 
 
+prepare a basic test suite and threads test [Stas]
+
 Make GTop object fully clone-able under threaded perl and threaded
 mod_perl 2.0, by using the CLONE function. [Stas]
 
