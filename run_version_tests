@@ -70,6 +70,11 @@ make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.4-ithread Makefile.PL && make &
 
 
 
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.5 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.5-ithread Makefile.PL && make && make test && make install
+
+
 make clean && /usr/bin/env CCFLAGS="-g" perl-blead Makefile.PL && make && make test && make install
 
 make clean && /usr/bin/env CCFLAGS="-g" perl-blead-ithread Makefile.PL && make && make test && make install

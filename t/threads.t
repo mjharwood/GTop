@@ -1,19 +1,26 @@
 use strict;
 use warnings;
 
+# should load threads.pm before Test::Builder in
+# other case Test::Builder wouldn't share test number
+BEGIN {
+    use Config;
+    use constant USETHREADS => ($] >= 5.008 && $Config{useithreads});
+    require threads if USETHREADS;
+}
+
 # XXX: at the moment testing only the survival of GTop objects with
 # threads, see the TODO file for remaining parts
 
 my $threads;
 BEGIN {
     use Test::More;
-    use Config;
-    unless ($] >= 5.008 && $Config{useithreads}) {
-        plan skip_all => 'perl 5.8+ w/ ithreads is required';
-    }
-    else {
+    if (USETHREADS) {
         $threads = 3;
         plan tests => 2 + ($threads+1);
+    }
+    else {
+        plan skip_all => 'perl 5.8+ w/ ithreads is required';
     }
 }
 
@@ -22,8 +29,6 @@ BEGIN { use_ok('GTop') };
 # the object is intentionally global, so perl won't destroy it right
 # away
 our $gtop = GTop->new;
-
-require threads;
 
 access_test();
 

@@ -275,7 +275,7 @@ WriteMakefile(
        FILES => "@{[<*.boot>, <*.gtop>]}",
    },
    'macro'      => {
-	  CVSROOT => 'modperl.com:/local/cvs_repository',
+       CVSROOT => 'modperl.com:/local/cvs_repository',
    },
 );
 
