@@ -3,7 +3,7 @@
 Add support to libgtop 2.0 and automate the picking of the right libraries
 and include paths. [Stas Bekman]
 
-Backport GTop to perl 5.005_03 using ppport.h
+Backport GTop to perl 5.005_03 using ppport.h [Stas Bekman]
 
 0.10 - January 31, 2000
 
