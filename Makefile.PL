@@ -126,8 +126,8 @@ EOF
 my \$$if = \$gtop->$if$args[3];
 print "$if\\n";
 for (qw(@{ $interface{$if} })) {
-    s/:\\w+\$//;
-    printf "   %s => %d\\n", \$_, \$$if->\$_();
+    (my \$x = \$_) =~ s/:\\w+\$//;
+    printf "   %s => %d\\n", \$x, \$$if->\$x();
 }
 
 EOF
