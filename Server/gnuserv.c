@@ -46,7 +46,10 @@
 #include <glibtop/open.h>
 #include <glibtop/close.h>
 #include <glibtop/command.h>
+
+#ifndef GTOP_2_5_PLUS
 #include <glibtop/xmalloc.h>
+#endif
 
 #include <glibtop/parameter.h>
 

@@ -30,10 +30,11 @@ sub get_glibtop_config {
         $gver = '';
     }
 
-    my $inc  = join " ", $GTOP_INCLUDE, $gver, $ginc, $config{incs};
-    my $libs = join " ", $GTOP_LIB, $config{libs};
+    my $inc     = join " ", $GTOP_INCLUDE, $ginc, $config{incs};
+    my $libs    = join " ", $GTOP_LIB, $config{libs};
+    my $defines = $gver;
 
-    return ($inc, $libs);
+    return ($inc, $libs, $defines);
 }
 
 sub get_glibtop_config_core {

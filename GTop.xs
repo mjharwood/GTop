@@ -8,10 +8,18 @@
 #include <glibtop.h>
 #include <glibtop/open.h>
 #include <glibtop/close.h>
+
+#ifndef GTOP_2_5_PLUS
 #include <glibtop/xmalloc.h>
+#endif
+
 #include <glibtop/parameter.h>
 #include <glibtop/union.h>
 #include <glibtop/sysdeps.h>
+
+#ifdef GTOP_2_5_PLUS
+#define glibtop_free g_free
+#endif
 
 #ifdef GTOP_DEBUG
 #define GTOP_TRACE(a) a

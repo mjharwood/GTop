@@ -1,3 +1,12 @@
+0.13 - Mon Apr 26 23:28:44 PDT 2004
+
+- Makefile.PL cleanups by Radoslaw Zielinski <radek@karnet.pl>.
+
+- adjust the build/source to support glibtop 2.5+. Thanks to Radoslaw
+  Zielinski <radek@karnet.pl> for the help and patches.
+
+- include the t/threads.t in the distro
+
 0.12 - Mon Dec 22 12:57:34 PST 2003
 
 prepare a basic test suite and threads test [Stas]

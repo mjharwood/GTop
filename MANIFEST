@@ -7,7 +7,10 @@ MANIFEST
 TODO
 Changes
 META.yml                                Module meta-data (added by MakeMaker)
+config.pl
 lib/GTop.pm
+t/basic.t
+t/threads.t
 examples/mountlist
 examples/procmap
 examples/proclist

@@ -30,7 +30,9 @@
 
 #include <glibtop/open.h>
 #include <glibtop/union.h>
+#ifndef GTOP_2_5_PLUS
 #include <glibtop/xmalloc.h>
+#endif
 #include <glibtop/version.h>
 #include <glibtop/command.h>
 #include <glibtop/parameter.h>
@@ -42,6 +44,11 @@
 
 #include "access.h"
 #include "server_config.h"
+
+#ifdef GTOP_2_5_PLUS
+#define BEGIN_LIBGTOP_DECLS G_BEGIN_DECLS
+#define END_LIBGTOP_DECLS   G_END_DECLS
+#endif
 
 BEGIN_LIBGTOP_DECLS
 

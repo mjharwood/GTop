@@ -1,3 +1,6 @@
+use strict;
+local $^W = 1; #need to support 5.005x
+
 use 5.005;
 use ExtUtils::MakeMaker;
 
@@ -6,7 +9,7 @@ use strict;
 use constant DEBUG => 1;
 
 my %prereq = (
-    "Test::More" => "",
+    "Test::More" => 0,
 );
 
 my %interface = (
@@ -174,13 +177,13 @@ EOF
 	    print FH <<EOF;
 static XS($xsname)
 {
-    dXSARGS; 
+    dXSARGS;
 
     glibtop_$if *s = (void *)SvIV((SV*)SvRV(ST(0)));
 
     ST(0) = sv_2mortal(newSVnv((unsigned long)s->$field));
 
-    XSRETURN(1); 
+    XSRETURN(1);
 }
 EOF
           }
@@ -217,11 +220,13 @@ EOF
 }
 
 print BOOTXS "\n}\n";
-print POD <<EOF;
+print POD <<'EOF';
 
 =head1 AUTHOR
 
-Doug MacEachern
+Doug MacEachern wrote the original version.
+
+Currently it's maintained by Stas Bekman <stas@stason.org>.
 
 EOF
 
@@ -237,23 +242,6 @@ close XS;
 close POD;
 close TEST;
 
-#needed for remote connection
-my $xlibs = "-L/usr/X11/lib -L/usr/X11R6/lib -lXau";
-
-# if none can be found will try the defaults
-my $GTOP_LIB_DEFAULT = "-lgtop -lgtop_sysdeps -lgtop_common -lglib $xlibs ";
-my $GTOP_LIB = "";
-if (my $path = $ENV{GTOP_LIB}) {
-    $GTOP_LIB = "-L$path ";
-}
-my $GTOP_INCLUDE = "";
-if (my $path = $ENV{GTOP_INCLUDE}) {
-    $GTOP_INCLUDE = "-I$path ";
-}
-
-chomp(my $ginc = `glib-config --cflags`);
-
-
 my @insure = ();
 if (0) {
     @insure = (
@@ -263,13 +251,10 @@ if (0) {
     );
 }
 
-my %config = get_glibtop_config();
-
-# give the default a try
-$GTOP_LIB = $GTOP_LIB_DEFAULT unless $GTOP_LIB || $config{libs};
-
-my $inc  = join " ", $GTOP_INCLUDE, $ginc, $config{incs};
-my $libs = join " ", $GTOP_LIB, $config{libs};
+require "./config.pl";
+# as we may need prevent the loading of this helper lib from Server/Makefile.PL
+#$ENV{GTOP_BUILD} = 0;
+my($inc, $libs, $defines) = get_glibtop_config();
 
 if (DEBUG) {
     warn "Using INC: $inc\n";
@@ -282,6 +267,7 @@ WriteMakefile(
    VERSION_FROM => 'lib/GTop.pm',
    INC          => $inc,
    LIBS         => [$libs],
+   DEFINE       => $defines,
    TYPEMAPS     => [qw(typemap.gtop typemap)],
    PREREQ_PM    => \%prereq,
    clean        => {
@@ -292,36 +278,13 @@ WriteMakefile(
    },
 );
 
-sub MY::postamble { 
-    return <<'EOF'; 
+sub MY::postamble {
+    return <<'EOF';
 
 cvs_tag :
-	cvs -d $(CVSROOT) tag v$(VERSION_SYM) . 
-	@echo update GTop.pm VERSION now 
+	cvs -d $(CVSROOT) tag v$(VERSION_SYM) .
+	@echo update GTop.pm VERSION now
 EOF
-} 
-
-# get libgtop CFLAGS/LIBS across 1.x-2.x versions
-sub get_glibtop_config {
-    my %c = ();
-
-    if (system('pkg-config --exists libgtop-2.0') == 0) {
-        # 2.x
-        chomp($c{incs} = qx|pkg-config --cflags libgtop-2.0|);
-        chomp($c{libs} = qx|pkg-config --libs   libgtop-2.0|);
-
-        # 2.0.0 bugfix
-        chomp(my $libdir = qx|pkg-config --variable=libdir libgtop-2.0|);
-        $c{libs} =~ s|\$\(libdir\)|$libdir|;
-    }
-    elsif (system('gnome-config --libs libgtop') == 0) {
-        chomp($c{incs} = qx|gnome-config --cflags libgtop|);
-        chomp($c{libs} = qx|gnome-config --libs   libgtop|);
-
-        # buggy ( < 1.0.9?) versions fixup
-        $c{incs} =~ s|^/|-I/|;
-        $c{libs} =~ s|^/|-L/|;
-    }
-
-    return %c;
 }
+
+

@@ -554,5 +554,7 @@ Perl interface to libgtop:
 
 =head1 AUTHOR
 
-Doug MacEachern
+Doug MacEachern wrote the original version.
+
+Currently it's maintained by Stas Bekman <stas@stason.org>.
 
