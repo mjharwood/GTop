@@ -1,3 +1,4 @@
+#define PERL_NO_GET_CONTEXT /* we want efficiency */
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
@@ -10,7 +11,7 @@ typedef glibtop_server_config_t * GTop__Server;
 #define server_start(s)       glibtop_server_start()
 #define server_allow(s, addr) glibtop_server_allow(addr)
 
-static void boot_GTop_Server_constants(void)
+static void boot_GTop_Server_constants(pTHX)
 {
     HV *stash = gv_stashpv("GTop::Server", TRUE);
 #include "constants.c"
@@ -19,7 +20,7 @@ static void boot_GTop_Server_constants(void)
 MODULE = GTop::Server   PACKAGE = GTop::Server  PREFIX = server_
 
 BOOT:
-    boot_GTop_Server_constants();
+    boot_GTop_Server_constants(aTHX);
 
 GTop::Server
 new(CLASS)

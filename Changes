@@ -1,5 +1,11 @@
 0.12 - 
 
+Make GTop object fully clone-able under threaded perl and threaded
+mod_perl 2.0, by using the CLONE function. [Stas]
+
+deploy PERL_NO_GET_CONTEXT macro in .xs modules for better efficiency,
+adjust the code to pass THX around [Stas]
+
 add debug printout of INC and LIBS [Stas]
 
 restore the default LIBS setting removed in 0.11 (suitable for gtop1),

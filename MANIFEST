@@ -1,11 +1,13 @@
 Makefile.PL
 ppport.h
 GTop.xs
-GTop.pm
 typemap
 README
 MANIFEST
+TODO
 Changes
+META.yml                                Module meta-data (added by MakeMaker)
+lib/GTop.pm
 examples/mountlist
 examples/procmap
 examples/proclist
@@ -24,5 +26,3 @@ Server/main.c
 Server/version.c
 Server/server_config.h
 
-
-META.yml                                Module meta-data (added by MakeMaker)

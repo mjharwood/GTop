@@ -14,7 +14,7 @@ typedef struct {
     glibtop_server_log_vtbl_t log_vtbl;
 } glibtop_server_config_t;
 
-glibtop_server_config_t *glibtop_server_config;
+extern glibtop_server_config_t *glibtop_server_config;
 
 void glibtop_server_config_init(int flags);
 

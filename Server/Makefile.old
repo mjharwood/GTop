@@ -1,93 +1,139 @@
 # This Makefile is for the GTop::Server extension to perl.
 #
 # It was generated automatically by MakeMaker version
-# 5.4302 (Revision: 1.222) from the contents of
+# 6.17 (Revision: 1.133) from the contents of
 # Makefile.PL. Don't edit this file, edit Makefile.PL instead.
 #
-#	ANY CHANGES MADE HERE WILL BE LOST!
+#       ANY CHANGES MADE HERE WILL BE LOST!
 #
 #   MakeMaker ARGV: ()
 #
 #   MakeMaker Parameters:
 
-#	INC => q[ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/libgtop-1.0 -DHAVE_LIBGTOP_SMP -DHAVE_LIBGTOP_SYSINFO -I/usr/include/gnome-1.0 -DNEED_GNOMESUPPORT_H -I/usr/lib/gnome-libs/include -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/orbit-1.0 -I/usr/include/gtk-1.2 -I/usr/X11R6/include]
-#	LIBS => [q[-L/usr/lib -L/usr/X11R6/lib -lgtop -lgtop_sysdeps -lgtop_common -lXau -lglib]]
-#	NAME => q[GTop::Server]
-#	OBJECT => q[io.o main.o gnuserv.o version.o access.o Server.o]
-#	VERSION_FROM => q[Server.pm]
-#	clean => { FILES=>q[server_config_flags.h constants.c] }
+#     INC => q[ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/libgtop-2.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  ]
+#     LIBS => [q[-L/usr/lib -L/usr/X11R6/lib -lgtop-2.0 -lgtop_sysdeps-2.0 -lgtop_common-2.0 -lXau -lglib-2.0]]
+#     NAME => q[GTop::Server]
+#     OBJECT => q[io.o main.o gnuserv.o version.o access.o Server.o]
+#     VERSION_FROM => q[Server.pm]
+#     clean => { FILES=>q[server_config_flags.h constants.c] }
 
 # --- MakeMaker post_initialize section:
 
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /home/stas/perl/5.005_03/lib/5.00503/i686-linux/Config.pm)
+# These definitions are from config.sh (via /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/Config.pm)
 
 # They may have been overridden via Makefile.PL or on the command line
 AR = ar
 CC = cc
 CCCDLFLAGS = -fpic
-CCDLFLAGS = -rdynamic
+CCDLFLAGS = -rdynamic -Wl,-rpath,/home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE
 DLEXT = so
 DLSRC = dl_dlopen.xs
 LD = cc
 LDDLFLAGS = -shared -L/usr/local/lib
 LDFLAGS =  -L/usr/local/lib
-LIBC = 
+LIBC = /lib/libc-2.3.2.so
 LIB_EXT = .a
 OBJ_EXT = .o
 OSNAME = linux
-OSVERS = 2.4.17-16mdksmp
+OSVERS = 2.4.22-10mdk
 RANLIB = :
+SITELIBEXP = /home/stas/perl/5.8.2-ithread/lib/site_perl/5.8.2
+SITEARCHEXP = /home/stas/perl/5.8.2-ithread/lib/site_perl/5.8.2/i686-linux-thread-multi
 SO = so
 EXE_EXT = 
+FULL_AR = /usr//bin/ar
+VENDORARCHEXP = 
+VENDORLIBEXP = 
 
 
 # --- MakeMaker constants section:
 AR_STATIC_ARGS = cr
+DIRFILESEP = /
 NAME = GTop::Server
-DISTNAME = GTop-Server
 NAME_SYM = GTop_Server
 VERSION = 0.01
-VERSION_SYM = 0_01
-XS_VERSION = 0.01
-INST_BIN = ../blib/bin
-INST_EXE = ../blib/script
-INST_LIB = ../blib/lib
-INST_ARCHLIB = ../blib/arch
-INST_SCRIPT = ../blib/script
-PREFIX = /home/stas/perl/5.005_03
-INSTALLDIRS = site
-INSTALLPRIVLIB = $(PREFIX)/lib/5.00503
-INSTALLARCHLIB = $(PREFIX)/lib/5.00503/i686-linux
-INSTALLSITELIB = $(PREFIX)/lib/site_perl/5.005
-INSTALLSITEARCH = $(PREFIX)/lib/site_perl/5.005/i686-linux
-INSTALLBIN = $(PREFIX)/bin
-INSTALLSCRIPT = $(PREFIX)/bin
-PERL_LIB = /home/stas/perl/5.005_03/lib/5.00503
-PERL_ARCHLIB = /home/stas/perl/5.005_03/lib/5.00503/i686-linux
-SITELIBEXP = /home/stas/perl/5.005_03/lib/site_perl/5.005
-SITEARCHEXP = /home/stas/perl/5.005_03/lib/site_perl/5.005/i686-linux
-LIBPERL_A = libperl.a
-FIRST_MAKEFILE = Makefile
-MAKE_APERL_FILE = Makefile.aperl
-PERLMAINCC = $(CC)
-PERL_INC = /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE
-PERL = /home/stas/perl/5.005_03/bin/perl
-FULLPERL = /home/stas/perl/5.005_03/bin/perl
-
 VERSION_MACRO = VERSION
+VERSION_SYM = 0_01
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
+XS_VERSION = 0.01
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
+INST_ARCHLIB = ../blib/arch
+INST_SCRIPT = ../blib/script
+INST_BIN = ../blib/bin
+INST_LIB = ../blib/lib
+INST_MAN1DIR = ../blib/man1
+INST_MAN3DIR = ../blib/man3
+MAN1EXT = 1
+MAN3EXT = 3
+INSTALLDIRS = site
+DESTDIR = 
+PREFIX = 
+PERLPREFIX = /home/stas/perl/5.8.2-ithread
+SITEPREFIX = /home/stas/perl/5.8.2-ithread
+VENDORPREFIX = 
+INSTALLPRIVLIB = $(PERLPREFIX)/lib/5.8.2
+DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
+INSTALLSITELIB = $(SITEPREFIX)/lib/site_perl/5.8.2
+DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
+INSTALLVENDORLIB = 
+DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
+INSTALLARCHLIB = $(PERLPREFIX)/lib/5.8.2/i686-linux-thread-multi
+DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
+INSTALLSITEARCH = $(SITEPREFIX)/lib/site_perl/5.8.2/i686-linux-thread-multi
+DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
+INSTALLVENDORARCH = 
+DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
+INSTALLBIN = $(PERLPREFIX)/bin
+DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
+INSTALLSITEBIN = $(SITEPREFIX)/bin
+DESTINSTALLSITEBIN = $(DESTDIR)$(INSTALLSITEBIN)
+INSTALLVENDORBIN = 
+DESTINSTALLVENDORBIN = $(DESTDIR)$(INSTALLVENDORBIN)
+INSTALLSCRIPT = $(PERLPREFIX)/bin
+DESTINSTALLSCRIPT = $(DESTDIR)$(INSTALLSCRIPT)
+INSTALLMAN1DIR = $(PERLPREFIX)/man/man1
+DESTINSTALLMAN1DIR = $(DESTDIR)$(INSTALLMAN1DIR)
+INSTALLSITEMAN1DIR = $(SITEPREFIX)/man/man1
+DESTINSTALLSITEMAN1DIR = $(DESTDIR)$(INSTALLSITEMAN1DIR)
+INSTALLVENDORMAN1DIR = 
+DESTINSTALLVENDORMAN1DIR = $(DESTDIR)$(INSTALLVENDORMAN1DIR)
+INSTALLMAN3DIR = $(PERLPREFIX)/man/man3
+DESTINSTALLMAN3DIR = $(DESTDIR)$(INSTALLMAN3DIR)
+INSTALLSITEMAN3DIR = $(SITEPREFIX)/man/man3
+DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
+INSTALLVENDORMAN3DIR = 
+DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
+PERL_LIB = /home/stas/perl/5.8.2-ithread/lib/5.8.2
+PERL_ARCHLIB = /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi
+LIBPERL_A = libperl.a
+FIRST_MAKEFILE = Makefile
+MAKEFILE_OLD = $(FIRST_MAKEFILE).old
+MAKE_APERL_FILE = $(FIRST_MAKEFILE).aperl
+PERLMAINCC = $(CC)
+PERL_INC = /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE
+PERL = /home/stas/perl/5.8.2-ithread/bin/perl5.8.2
+FULLPERL = /home/stas/perl/5.8.2-ithread/bin/perl5.8.2
+ABSPERL = $(PERL)
+PERLRUN = $(PERL)
+FULLPERLRUN = $(FULLPERL)
+ABSPERLRUN = $(ABSPERL)
+PERLRUNINST = $(PERLRUN) "-I$(INST_ARCHLIB)" "-I$(INST_LIB)"
+FULLPERLRUNINST = $(FULLPERLRUN) "-I$(INST_ARCHLIB)" "-I$(INST_LIB)"
+ABSPERLRUNINST = $(ABSPERLRUN) "-I$(INST_ARCHLIB)" "-I$(INST_LIB)"
+PERL_CORE = 0
+PERM_RW = 644
+PERM_RWX = 755
 
-MAKEMAKER = /home/stas/perl/5.005_03/lib/5.00503/ExtUtils/MakeMaker.pm
-MM_VERSION = 5.4302
+MAKEMAKER   = /home/stas/perl/5.8.2-ithread/lib/5.8.2/ExtUtils/MakeMaker.pm
+MM_VERSION  = 6.17
+MM_REVISION = 1.133
 
 # FULLEXT = Pathname for extension directory (eg Foo/Bar/Oracle).
 # BASEEXT = Basename part of FULLEXT. May be just equal FULLEXT. (eg Oracle)
-# ROOTEXT = Directory part of FULLEXT with leading slash (eg /DBD)  !!! Deprecated from MM 5.32  !!!
 # PARENT_NAME = NAME without BASEEXT and no trailing :: (eg Foo::Bar)
 # DLBASE  = Basename part of dynamic library. May be just equal BASEEXT.
 FULLEXT = GTop/Server
@@ -95,118 +141,109 @@ BASEEXT = Server
 PARENT_NAME = GTop
 DLBASE = $(BASEEXT)
 VERSION_FROM = Server.pm
-INC =  -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/libgtop-1.0 -DHAVE_LIBGTOP_SMP -DHAVE_LIBGTOP_SYSINFO -I/usr/include/gnome-1.0 -DNEED_GNOMESUPPORT_H -I/usr/lib/gnome-libs/include -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/orbit-1.0 -I/usr/include/gtk-1.2 -I/usr/X11R6/include
+INC =  -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/libgtop-2.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
 OBJECT = io$(OBJ_EXT) main$(OBJ_EXT) gnuserv$(OBJ_EXT) version$(OBJ_EXT) access$(OBJ_EXT) Server$(OBJ_EXT)
 LDFROM = $(OBJECT)
 LINKTYPE = dynamic
 
 # Handy lists of source code files:
-XS_FILES= Server.xs
-C_FILES = Server.c \
+XS_FILES = Server.xs
+C_FILES  = Server.c \
 	access.c \
 	constants.c \
 	gnuserv.c \
 	io.c \
 	main.c \
 	version.c
-O_FILES = Server.o \
+O_FILES  = Server.o \
 	access.o \
 	constants.o \
 	gnuserv.o \
 	io.o \
 	main.o \
 	version.o
-H_FILES = access.h \
+H_FILES  = access.h \
 	daemon.h \
 	server_config.h \
 	server_config_flags.h
 MAN1PODS = 
 MAN3PODS = 
-INST_MAN1DIR = ../blib/man1
-INSTALLMAN1DIR = $(PREFIX)/man/man1
-MAN1EXT = 1
-INST_MAN3DIR = ../blib/man3
-INSTALLMAN3DIR = $(PREFIX)/man/man3
-MAN3EXT = 3
-PERM_RW = 644
-PERM_RWX = 755
-
-# work around a famous dec-osf make(1) feature(?):
-makemakerdflt: all
-
-.SUFFIXES: .xs .c .C .cpp .cxx .cc $(OBJ_EXT)
-
-# Nick wanted to get rid of .PRECIOUS. I don't remember why. I seem to recall, that
-# some make implementations will delete the Makefile when we rebuild it. Because
-# we call false(1) when we rebuild it. So make(1) is not completely wrong when it
-# does so. Our milage may vary.
-# .PRECIOUS: Makefile    # seems to be not necessary anymore
-
-.PHONY: all config static dynamic test linkext manifest
 
 # Where is the Config information that we are using/depend on
-CONFIGDEP = $(PERL_ARCHLIB)/Config.pm $(PERL_INC)/config.h
+CONFIGDEP = $(PERL_ARCHLIB)$(DIRFILESEP)Config.pm $(PERL_INC)$(DIRFILESEP)config.h
 
-# Where to put things:
+# Where to build things
 INST_LIBDIR      = $(INST_LIB)/GTop
 INST_ARCHLIBDIR  = $(INST_ARCHLIB)/GTop
 
 INST_AUTODIR     = $(INST_LIB)/auto/$(FULLEXT)
 INST_ARCHAUTODIR = $(INST_ARCHLIB)/auto/$(FULLEXT)
 
-INST_STATIC  = $(INST_ARCHAUTODIR)/$(BASEEXT)$(LIB_EXT)
-INST_DYNAMIC = $(INST_ARCHAUTODIR)/$(DLBASE).$(DLEXT)
-INST_BOOT    = $(INST_ARCHAUTODIR)/$(BASEEXT).bs
+INST_STATIC      = $(INST_ARCHAUTODIR)/$(BASEEXT)$(LIB_EXT)
+INST_DYNAMIC     = $(INST_ARCHAUTODIR)/$(DLBASE).$(DLEXT)
+INST_BOOT        = $(INST_ARCHAUTODIR)/$(BASEEXT).bs
 
-EXPORT_LIST = 
+# Extra linker info
+EXPORT_LIST        = 
+PERL_ARCHIVE       = 
+PERL_ARCHIVE_AFTER = 
 
-PERL_ARCHIVE = 
 
 TO_INST_PM = Server.pm
 
 PM_TO_BLIB = Server.pm \
-	$(INST_LIBDIR)/Server.pm
+	$(INST_LIB)/GTop/Server.pm
+
+
+# --- MakeMaker platform_constants section:
+MM_Unix_VERSION = 1.42
+PERL_MALLOC_DEF = -DPERL_EXTMALLOC_DEF -Dmalloc=Perl_malloc -Dfree=Perl_mfree -Drealloc=Perl_realloc -Dcalloc=Perl_calloc
 
 
 # --- MakeMaker tool_autosplit section:
-
 # Usage: $(AUTOSPLITFILE) FileToSplit AutoDirToSplitInto
-AUTOSPLITFILE = $(PERL) "-I$(PERL_ARCHLIB)" "-I$(PERL_LIB)" -e 'use AutoSplit;autosplit($$ARGV[0], $$ARGV[1], 0, 1, 1) ;'
+AUTOSPLITFILE = $(PERLRUN)  -e 'use AutoSplit;  autosplit($$ARGV[0], $$ARGV[1], 0, 1, 1)'
+
 
 
 # --- MakeMaker tool_xsubpp section:
 
-XSUBPPDIR = /home/stas/perl/5.005_03/lib/5.00503/ExtUtils
+XSUBPPDIR = /home/stas/perl/5.8.2-ithread/lib/5.8.2/ExtUtils
 XSUBPP = $(XSUBPPDIR)/xsubpp
 XSPROTOARG = 
-XSUBPPDEPS = $(XSUBPPDIR)/typemap typemap
-XSUBPPARGS = -typemap $(XSUBPPDIR)/typemap -typemap typemap
+XSUBPPDEPS = /home/stas/perl/5.8.2-ithread/lib/5.8.2/ExtUtils/typemap typemap $(XSUBPP)
+XSUBPPARGS = -typemap /home/stas/perl/5.8.2-ithread/lib/5.8.2/ExtUtils/typemap -typemap typemap
+XSUBPP_EXTRA_ARGS = 
 
 
 # --- MakeMaker tools_other section:
-
 SHELL = /bin/sh
 CHMOD = chmod
 CP = cp
-LD = cc
 MV = mv
 NOOP = $(SHELL) -c true
+NOECHO = @
 RM_F = rm -f
 RM_RF = rm -rf
 TEST_F = test -f
 TOUCH = touch
 UMASK_NULL = umask 0
 DEV_NULL = > /dev/null 2>&1
+MKPATH = $(PERLRUN) "-MExtUtils::Command" -e mkpath
+EQUALIZE_TIMESTAMP = $(PERLRUN) "-MExtUtils::Command" -e eqtime
+ECHO = echo
+ECHO_N = echo -n
+UNINST = 0
+VERBINST = 0
+MOD_INSTALL = $(PERLRUN) -MExtUtils::Install -e 'install({@ARGV}, '\''$(VERBINST)'\'', 0, '\''$(UNINST)'\'');'
+DOC_INSTALL = $(PERLRUN) "-MExtUtils::Command::MM" -e perllocal_install
+UNINSTALL = $(PERLRUN) "-MExtUtils::Command::MM" -e uninstall
+WARN_IF_OLD_PACKLIST = $(PERLRUN) "-MExtUtils::Command::MM" -e warn_if_old_packlist
 
-# The following is a portable way to say mkdir -p
-# To see which directories are created, change the if 0 to if 1
-MKPATH = $(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) -MExtUtils::Command -e mkpath
 
-# This helps us to minimize the effect of the .exists files A yet
-# better solution would be to have a stable file in the perl
-# distribution with a timestamp of zero. But this solution doesn't
-# need any changes to the core distribution and works with older perls
-EQUALIZE_TIMESTAMP = $(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) -MExtUtils::Command -e eqtime
+# --- MakeMaker makemakerdflt section:
+makemakerdflt: all
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker dist section skipped.
@@ -219,11 +256,10 @@ EQUALIZE_TIMESTAMP = $(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) -MExtUtils::Command
 
 # --- MakeMaker cflags section:
 
-CCFLAGS = -Dbool=char -DHAS_BOOL -DDEBUGGING -I/usr/local/include
+CCFLAGS = -D_REENTRANT -D_GNU_SOURCE -DTHREADS_HAVE_PIDS -DDEBUGGING -fno-strict-aliasing -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/include/gdbm
 OPTIMIZE = -g
 PERLTYPE = 
-LARGE = 
-SPLIT = 
+MPOLLUTE = 
 
 
 # --- MakeMaker const_loadlibs section:
@@ -231,15 +267,16 @@ SPLIT =
 # GTop::Server might depend on some other libraries:
 # See ExtUtils::Liblist for details
 #
-EXTRALIBS = -L/usr/lib -L/usr/X11R6/lib -lgtop -lgtop_sysdeps -lgtop_common -lXau -lglib
-LDLOADLIBS = -L/usr/lib -L/usr/X11R6/lib -lgtop -lgtop_sysdeps -lgtop_common -lXau -lglib
+EXTRALIBS = -L/usr/lib -L/usr/X11R6/lib -lgtop-2.0 -lgtop_sysdeps-2.0 -lgtop_common-2.0 -lXau -lglib-2.0
+LDLOADLIBS = -L/usr/lib -L/usr/X11R6/lib -lgtop-2.0 -lgtop_sysdeps-2.0 -lgtop_common-2.0 -lXau -lglib-2.0
 BSLOADLIBS = 
-LD_RUN_PATH = /usr/lib:/usr/X11R6/lib
+LD_RUN_PATH = /usr/lib
 
 
 # --- MakeMaker const_cccmd section:
-CCCMD = $(CC) -c $(INC) $(CCFLAGS) $(OPTIMIZE) \
-	$(PERLTYPE) $(LARGE) $(SPLIT) $(DEFINE_VERSION) \
+CCCMD = $(CC) -c $(PASTHRU_INC) $(INC) \
+	$(CCFLAGS) $(OPTIMIZE) \
+	$(PERLTYPE) $(MPOLLUTE) $(DEFINE_VERSION) \
 	$(XS_DEFINE_VERSION)
 
 # --- MakeMaker post_constants section:
@@ -251,95 +288,106 @@ PASTHRU = LIB="$(LIB)"\
 	LIBPERL_A="$(LIBPERL_A)"\
 	LINKTYPE="$(LINKTYPE)"\
 	PREFIX="$(PREFIX)"\
-	OPTIMIZE="$(OPTIMIZE)"
+	OPTIMIZE="$(OPTIMIZE)"\
+	PASTHRU_DEFINE="$(PASTHRU_DEFINE)"\
+	PASTHRU_INC="$(PASTHRU_INC)"
+
+
+# --- MakeMaker special_targets section:
+.SUFFIXES: .xs .c .C .cpp .i .s .cxx .cc $(OBJ_EXT)
+
+.PHONY: all config static dynamic test linkext manifest
+
 
 
 # --- MakeMaker c_o section:
 
+.c.i:
+	cc -E -c $(PASTHRU_INC) $(INC) \
+	$(CCFLAGS) $(OPTIMIZE) \
+	$(PERLTYPE) $(MPOLLUTE) $(DEFINE_VERSION) \
+	$(XS_DEFINE_VERSION) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.c > $*.i
+
+.c.s:
+	$(CCCMD) -S $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.c
+
 .c$(OBJ_EXT):
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.c
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.c
 
 .C$(OBJ_EXT):
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.C
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.C
 
 .cpp$(OBJ_EXT):
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.cpp
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.cpp
 
 .cxx$(OBJ_EXT):
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.cxx
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.cxx
 
 .cc$(OBJ_EXT):
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.cc
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.cc
 
 
 # --- MakeMaker xs_c section:
 
 .xs.c:
-	$(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) $(XSUBPP) $(XSPROTOARG) $(XSUBPPARGS) $*.xs >xstmp.c && $(MV) xstmp.c $*.c
+	$(PERLRUN) $(XSUBPP) $(XSPROTOARG) $(XSUBPPARGS) $(XSUBPP_EXTRA_ARGS) $*.xs > $*.xsc && $(MV) $*.xsc $*.c
 
 
 # --- MakeMaker xs_o section:
 
 .xs$(OBJ_EXT):
-	$(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) $(XSUBPP) $(XSPROTOARG) $(XSUBPPARGS) $*.xs >xstmp.c && $(MV) xstmp.c $*.c
-	$(CCCMD) $(CCCDLFLAGS) -I$(PERL_INC) $(DEFINE) $*.c
+	$(PERLRUN) $(XSUBPP) $(XSPROTOARG) $(XSUBPPARGS) $*.xs > $*.xsc && $(MV) $*.xsc $*.c
+	$(CCCMD) $(CCCDLFLAGS) "-I$(PERL_INC)" $(PASTHRU_DEFINE) $(DEFINE) $*.c
 
 
 # --- MakeMaker top_targets section:
-
-#all ::	config $(INST_PM) subdirs linkext manifypods
-
 all :: pure_all manifypods
-	@$(NOOP)
+	$(NOECHO) $(NOOP)
+
 
 pure_all :: config pm_to_blib subdirs linkext
-	@$(NOOP)
+	$(NOECHO) $(NOOP)
 
 subdirs :: $(MYEXTLIB)
-	@$(NOOP)
+	$(NOECHO) $(NOOP)
 
-config :: Makefile $(INST_LIBDIR)/.exists
-	@$(NOOP)
+config :: $(FIRST_MAKEFILE) $(INST_LIBDIR)$(DIRFILESEP).exists
+	$(NOECHO) $(NOOP)
 
-config :: $(INST_ARCHAUTODIR)/.exists
-	@$(NOOP)
+config :: $(INST_ARCHAUTODIR)$(DIRFILESEP).exists
+	$(NOECHO) $(NOOP)
 
-config :: $(INST_AUTODIR)/.exists
-	@$(NOOP)
+config :: $(INST_AUTODIR)$(DIRFILESEP).exists
+	$(NOECHO) $(NOOP)
 
-$(INST_AUTODIR)/.exists :: /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h
-	@$(MKPATH) $(INST_AUTODIR)
-	@$(EQUALIZE_TIMESTAMP) /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h $(INST_AUTODIR)/.exists
+$(INST_AUTODIR)/.exists :: /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h
+	$(NOECHO) $(MKPATH) $(INST_AUTODIR)
+	$(NOECHO) $(EQUALIZE_TIMESTAMP) /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h $(INST_AUTODIR)/.exists
 
-	-@$(CHMOD) $(PERM_RWX) $(INST_AUTODIR)
+	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_AUTODIR)
 
-$(INST_LIBDIR)/.exists :: /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h
-	@$(MKPATH) $(INST_LIBDIR)
-	@$(EQUALIZE_TIMESTAMP) /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h $(INST_LIBDIR)/.exists
+$(INST_LIBDIR)/.exists :: /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h
+	$(NOECHO) $(MKPATH) $(INST_LIBDIR)
+	$(NOECHO) $(EQUALIZE_TIMESTAMP) /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h $(INST_LIBDIR)/.exists
 
-	-@$(CHMOD) $(PERM_RWX) $(INST_LIBDIR)
+	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_LIBDIR)
 
-$(INST_ARCHAUTODIR)/.exists :: /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h
-	@$(MKPATH) $(INST_ARCHAUTODIR)
-	@$(EQUALIZE_TIMESTAMP) /home/stas/perl/5.005_03/lib/5.00503/i686-linux/CORE/perl.h $(INST_ARCHAUTODIR)/.exists
+$(INST_ARCHAUTODIR)/.exists :: /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h
+	$(NOECHO) $(MKPATH) $(INST_ARCHAUTODIR)
+	$(NOECHO) $(EQUALIZE_TIMESTAMP) /home/stas/perl/5.8.2-ithread/lib/5.8.2/i686-linux-thread-multi/CORE/perl.h $(INST_ARCHAUTODIR)/.exists
 
-	-@$(CHMOD) $(PERM_RWX) $(INST_ARCHAUTODIR)
+	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_ARCHAUTODIR)
 
 $(O_FILES): $(H_FILES)
 
 help:
 	perldoc ExtUtils::MakeMaker
 
-Version_check:
-	@$(PERL) -I$(PERL_ARCHLIB) -I$(PERL_LIB) \
-		-MExtUtils::MakeMaker=Version_check \
-		-e "Version_check('$(MM_VERSION)')"
-
 
 # --- MakeMaker linkext section:
 
 linkext :: $(LINKTYPE)
-	@$(NOOP)
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker dlsyms section:
@@ -347,31 +395,27 @@ linkext :: $(LINKTYPE)
 
 # --- MakeMaker dynamic section:
 
-## $(INST_PM) has been moved to the all: target.
-## It remains here for awhile to allow for old usage: "make dynamic"
-#dynamic :: Makefile $(INST_DYNAMIC) $(INST_BOOT) $(INST_PM)
-dynamic :: Makefile $(INST_DYNAMIC) $(INST_BOOT)
-	@$(NOOP)
+dynamic :: $(FIRST_MAKEFILE) $(INST_DYNAMIC) $(INST_BOOT)
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker dynamic_bs section:
-
-BOOTSTRAP = Server.bs
+BOOTSTRAP = $(BASEEXT).bs
 
 # As Mkbootstrap might not write a file (if none is required)
 # we use touch to prevent make continually trying to remake it.
 # The DynaLoader only reads a non-empty file.
-$(BOOTSTRAP): Makefile  $(INST_ARCHAUTODIR)/.exists
-	@echo "Running Mkbootstrap for $(NAME) ($(BSLOADLIBS))"
-	@$(PERL) "-I$(PERL_ARCHLIB)" "-I$(PERL_LIB)" \
-		-MExtUtils::Mkbootstrap \
+$(BOOTSTRAP): $(FIRST_MAKEFILE) $(BOOTDEP) $(INST_ARCHAUTODIR)$(DIRFILESEP).exists
+	$(NOECHO) $(ECHO) "Running Mkbootstrap for $(NAME) ($(BSLOADLIBS))"
+	$(NOECHO) $(PERLRUN) \
+		"-MExtUtils::Mkbootstrap" \
 		-e "Mkbootstrap('$(BASEEXT)','$(BSLOADLIBS)');"
-	@$(TOUCH) $(BOOTSTRAP)
+	$(NOECHO) $(TOUCH) $(BOOTSTRAP)
 	$(CHMOD) $(PERM_RW) $@
 
-$(INST_BOOT): $(BOOTSTRAP) $(INST_ARCHAUTODIR)/.exists
-	@rm -rf $(INST_BOOT)
-	-cp $(BOOTSTRAP) $(INST_BOOT)
+$(INST_BOOT): $(BOOTSTRAP) $(INST_ARCHAUTODIR)$(DIRFILESEP).exists
+	$(NOECHO) $(RM_RF) $(INST_BOOT)
+	-$(CP) $(BOOTSTRAP) $(INST_BOOT)
 	$(CHMOD) $(PERM_RW) $@
 
 
@@ -382,9 +426,11 @@ $(INST_BOOT): $(BOOTSTRAP) $(INST_ARCHAUTODIR)/.exists
 ARMAYBE = :
 OTHERLDFLAGS = 
 INST_DYNAMIC_DEP = 
+INST_DYNAMIC_FIX = 
 
-$(INST_DYNAMIC): $(OBJECT) $(MYEXTLIB) $(BOOTSTRAP) $(INST_ARCHAUTODIR)/.exists $(EXPORT_LIST) $(PERL_ARCHIVE) $(INST_DYNAMIC_DEP)
-	LD_RUN_PATH="$(LD_RUN_PATH)" $(LD) -o $@  $(LDDLFLAGS) $(LDFROM) $(OTHERLDFLAGS) $(MYEXTLIB) $(PERL_ARCHIVE) $(LDLOADLIBS) $(EXPORT_LIST)
+$(INST_DYNAMIC): $(OBJECT) $(MYEXTLIB) $(BOOTSTRAP) $(INST_ARCHAUTODIR)$(DIRFILESEP).exists $(EXPORT_LIST) $(PERL_ARCHIVE) $(PERL_ARCHIVE_AFTER) $(INST_DYNAMIC_DEP)
+	$(RM_F) $@
+	LD_RUN_PATH="$(LD_RUN_PATH)" $(LD)  $(LDDLFLAGS) $(LDFROM) $(OTHERLDFLAGS) -o $@ $(MYEXTLIB) $(PERL_ARCHIVE) $(LDLOADLIBS) $(PERL_ARCHIVE_AFTER) $(EXPORT_LIST) $(INST_DYNAMIC_FIX)
 	$(CHMOD) $(PERM_RWX) $@
 
 
@@ -392,25 +438,30 @@ $(INST_DYNAMIC): $(OBJECT) $(MYEXTLIB) $(BOOTSTRAP) $(INST_ARCHAUTODIR)/.exists 
 
 ## $(INST_PM) has been moved to the all: target.
 ## It remains here for awhile to allow for old usage: "make static"
-#static :: Makefile $(INST_STATIC) $(INST_PM)
-static :: Makefile $(INST_STATIC)
-	@$(NOOP)
+static :: $(FIRST_MAKEFILE) $(INST_STATIC)
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker static_lib section:
 
-$(INST_STATIC): $(OBJECT) $(MYEXTLIB) $(INST_ARCHAUTODIR)/.exists
+$(INST_STATIC): $(OBJECT) $(MYEXTLIB) $(INST_ARCHAUTODIR)$(DIRFILESEP).exists
 	$(RM_RF) $@
-	$(AR) $(AR_STATIC_ARGS) $@ $(OBJECT) && $(RANLIB) $@
+	$(FULL_AR) $(AR_STATIC_ARGS) $@ $(OBJECT) && $(RANLIB) $@
 	$(CHMOD) $(PERM_RWX) $@
-	@echo "$(EXTRALIBS)" > $(INST_ARCHAUTODIR)/extralibs.ld
+	$(NOECHO) $(ECHO) "$(EXTRALIBS)" > $(INST_ARCHAUTODIR)/extralibs.ld
 
 
 
 # --- MakeMaker manifypods section:
 
-manifypods : pure_all
-	@$(NOOP)
+POD2MAN_EXE = $(PERLRUN) "-MExtUtils::Command::MM" -e pod2man "--"
+POD2MAN = $(POD2MAN_EXE)
+
+
+manifypods : pure_all 
+	$(NOECHO) $(NOOP)
+
+
 
 
 # --- MakeMaker processPL section:
@@ -423,32 +474,62 @@ manifypods : pure_all
 
 # none
 
+# --- MakeMaker clean_subdirs section:
+clean_subdirs :
+	$(NOECHO) $(NOOP)
+
+
 # --- MakeMaker clean section:
 
 # Delete temporary files but do not touch installed files. We don't delete
 # the Makefile here so a later make realclean still has a makefile to use.
 
-clean ::
-	-rm -rf Server.c server_config_flags.h constants.c ./blib $(MAKE_APERL_FILE) $(INST_ARCHAUTODIR)/extralibs.all perlmain.c mon.out core so_locations pm_to_blib *~ */*~ */*/*~ *$(OBJ_EXT) *$(LIB_EXT) perl.exe $(BOOTSTRAP) $(BASEEXT).bso $(BASEEXT).def $(BASEEXT).exp
-	-mv Makefile Makefile.old $(DEV_NULL)
+clean :: clean_subdirs
+	-$(RM_RF) Server.c server_config_flags.h constants.c ./blib $(MAKE_APERL_FILE) $(INST_ARCHAUTODIR)/extralibs.all $(INST_ARCHAUTODIR)/extralibs.ld perlmain.c tmon.out mon.out so_locations pm_to_blib *$(OBJ_EXT) *$(LIB_EXT) perl.exe perl perl$(EXE_EXT) $(BOOTSTRAP) $(BASEEXT).bso $(BASEEXT).def lib$(BASEEXT).def $(BASEEXT).exp $(BASEEXT).x core core.*perl.*.? *perl.core core.[0-9] core.[0-9][0-9] core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9][0-9]
+	-$(MV) $(FIRST_MAKEFILE) $(MAKEFILE_OLD) $(DEV_NULL)
+
+
+# --- MakeMaker realclean_subdirs section:
+realclean_subdirs :
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker realclean section:
 
 # Delete temporary files (via clean) and also delete installed files
-realclean purge ::  clean
-	rm -rf $(INST_AUTODIR) $(INST_ARCHAUTODIR)
-	rm -f $(INST_DYNAMIC) $(INST_BOOT)
-	rm -f $(INST_STATIC)
-	rm -f $(INST_LIBDIR)/Server.pm
-	rm -rf Makefile Makefile.old
+realclean purge ::  clean realclean_subdirs
+	$(RM_RF) $(INST_AUTODIR) $(INST_ARCHAUTODIR)
+	$(RM_RF) $(DISTVNAME)
+	$(RM_F) $(INST_DYNAMIC) $(INST_BOOT)
+	$(RM_F) $(INST_STATIC)
+	$(RM_F)  $(INST_LIB)/GTop/Server.pm $(MAKEFILE_OLD) $(FIRST_MAKEFILE)
+
+
+# --- MakeMaker metafile section:
+metafile :
+	$(NOECHO) $(ECHO) '# http://module-build.sourceforge.net/META-spec.html' > META.yml
+	$(NOECHO) $(ECHO) '#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#' >> META.yml
+	$(NOECHO) $(ECHO) 'name:         GTop-Server' >> META.yml
+	$(NOECHO) $(ECHO) 'version:      0.01' >> META.yml
+	$(NOECHO) $(ECHO) 'version_from: Server.pm' >> META.yml
+	$(NOECHO) $(ECHO) 'installdirs:  site' >> META.yml
+	$(NOECHO) $(ECHO) 'requires:' >> META.yml
+	$(NOECHO) $(ECHO) '' >> META.yml
+	$(NOECHO) $(ECHO) 'distribution_type: module' >> META.yml
+	$(NOECHO) $(ECHO) 'generated_by: ExtUtils::MakeMaker version 6.17' >> META.yml
+
+
+# --- MakeMaker metafile_addtomanifest section:
+metafile_addtomanifest:
+	$(NOECHO) $(PERLRUN) -MExtUtils::Manifest=maniadd -e 'eval { maniadd({q{META.yml} => q{Module meta-data (added by MakeMaker)}}) } ' \
+	-e '    or print "Could not add META.yml to MANIFEST: $${'\''@'\''}\n"'
 
 
 # --- MakeMaker dist_basics section skipped.
 
 # --- MakeMaker dist_core section skipped.
 
-# --- MakeMaker dist_dir section skipped.
+# --- MakeMaker distdir section skipped.
 
 # --- MakeMaker dist_test section skipped.
 
@@ -459,22 +540,54 @@ realclean purge ::  clean
 # --- MakeMaker force section:
 # Phony target to force checking subdirectories.
 FORCE:
-	@$(NOOP)
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker perldepend section:
 
 PERL_HDRS = \
-$(PERL_INC)/EXTERN.h       $(PERL_INC)/gv.h           $(PERL_INC)/pp.h       \
-$(PERL_INC)/INTERN.h       $(PERL_INC)/handy.h        $(PERL_INC)/proto.h    \
-$(PERL_INC)/XSUB.h         $(PERL_INC)/hv.h           $(PERL_INC)/regcomp.h  \
-$(PERL_INC)/av.h           $(PERL_INC)/keywords.h     $(PERL_INC)/regexp.h   \
-$(PERL_INC)/config.h       $(PERL_INC)/mg.h           $(PERL_INC)/scope.h    \
-$(PERL_INC)/cop.h          $(PERL_INC)/op.h           $(PERL_INC)/sv.h	     \
-$(PERL_INC)/cv.h           $(PERL_INC)/opcode.h       $(PERL_INC)/unixish.h  \
-$(PERL_INC)/dosish.h       $(PERL_INC)/patchlevel.h   $(PERL_INC)/util.h     \
-$(PERL_INC)/embed.h        $(PERL_INC)/perl.h         $(PERL_INC)/iperlsys.h \
-$(PERL_INC)/form.h         $(PERL_INC)/perly.h
+	$(PERL_INC)/EXTERN.h		\
+	$(PERL_INC)/INTERN.h		\
+	$(PERL_INC)/XSUB.h		\
+	$(PERL_INC)/av.h		\
+	$(PERL_INC)/cc_runtime.h	\
+	$(PERL_INC)/config.h		\
+	$(PERL_INC)/cop.h		\
+	$(PERL_INC)/cv.h		\
+	$(PERL_INC)/dosish.h		\
+	$(PERL_INC)/embed.h		\
+	$(PERL_INC)/embedvar.h		\
+	$(PERL_INC)/fakethr.h		\
+	$(PERL_INC)/form.h		\
+	$(PERL_INC)/gv.h		\
+	$(PERL_INC)/handy.h		\
+	$(PERL_INC)/hv.h		\
+	$(PERL_INC)/intrpvar.h		\
+	$(PERL_INC)/iperlsys.h		\
+	$(PERL_INC)/keywords.h		\
+	$(PERL_INC)/mg.h		\
+	$(PERL_INC)/nostdio.h		\
+	$(PERL_INC)/op.h		\
+	$(PERL_INC)/opcode.h		\
+	$(PERL_INC)/patchlevel.h	\
+	$(PERL_INC)/perl.h		\
+	$(PERL_INC)/perlio.h		\
+	$(PERL_INC)/perlsdio.h		\
+	$(PERL_INC)/perlsfio.h		\
+	$(PERL_INC)/perlvars.h		\
+	$(PERL_INC)/perly.h		\
+	$(PERL_INC)/pp.h		\
+	$(PERL_INC)/pp_proto.h		\
+	$(PERL_INC)/proto.h		\
+	$(PERL_INC)/regcomp.h		\
+	$(PERL_INC)/regexp.h		\
+	$(PERL_INC)/regnodes.h		\
+	$(PERL_INC)/scope.h		\
+	$(PERL_INC)/sv.h		\
+	$(PERL_INC)/thrdvar.h		\
+	$(PERL_INC)/thread.h		\
+	$(PERL_INC)/unixish.h		\
+	$(PERL_INC)/util.h
 
 $(OBJECT) : $(PERL_HDRS)
 
@@ -485,30 +598,26 @@ Server.c : $(XSUBPPDEPS)
 
 $(OBJECT) : $(FIRST_MAKEFILE)
 
-# We take a very conservative approach here, but it\'s worth it.
+# We take a very conservative approach here, but it's worth it.
 # We move Makefile to Makefile.old here to avoid gnu make looping.
-Makefile : Makefile.PL $(CONFIGDEP)
-	@echo "Makefile out-of-date with respect to $?"
-	@echo "Cleaning current config before rebuilding Makefile..."
-	-@$(RM_F) Makefile.old
-	-@$(MV) Makefile Makefile.old
-	-$(MAKE) -f Makefile.old clean $(DEV_NULL) || $(NOOP)
-	$(PERL) "-I$(PERL_ARCHLIB)" "-I$(PERL_LIB)" Makefile.PL 
-	@echo "==> Your Makefile has been rebuilt. <=="
-	@echo "==> Please rerun the make command.  <=="
+$(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
+	$(NOECHO) $(ECHO) "Makefile out-of-date with respect to $?"
+	$(NOECHO) $(ECHO) "Cleaning current config before rebuilding Makefile..."
+	$(NOECHO) $(RM_F) $(MAKEFILE_OLD)
+	$(NOECHO) $(MV)   $(FIRST_MAKEFILE) $(MAKEFILE_OLD)
+	-$(MAKE) -f $(MAKEFILE_OLD) clean $(DEV_NULL) || $(NOOP)
+	$(PERLRUN) Makefile.PL 
+	$(NOECHO) $(ECHO) "==> Your Makefile has been rebuilt. <=="
+	$(NOECHO) $(ECHO) "==> Please rerun the make command.  <=="
 	false
 
-# To change behavior to :: would be nice, but would break Tk b9.02
-# so you find such a warning below the dist target.
-#Makefile :: $(VERSION_FROM)
-#	@echo "Warning: Makefile possibly out of date with $(VERSION_FROM)"
 
 
 # --- MakeMaker staticmake section:
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = ../perl
-FULLPERL      = /home/stas/perl/5.005_03/bin/perl
+FULLPERL      = /home/stas/perl/5.8.2-ithread/bin/perl5.8.2
 
 
 # --- MakeMaker test section:
@@ -522,35 +631,43 @@ TESTDB_SW = -d
 testdb :: testdb_$(LINKTYPE)
 
 test :: $(TEST_TYPE)
-	@echo 'No tests defined for $(NAME) extension.'
+	$(NOECHO) $(ECHO) 'No tests defined for $(NAME) extension.'
 
 test_dynamic :: pure_all
 
 testdb_dynamic :: pure_all
-	PERL_DL_NONLAZY=1 $(FULLPERL) $(TESTDB_SW) -I$(INST_ARCHLIB) -I$(INST_LIB) -I$(PERL_ARCHLIB) -I$(PERL_LIB) $(TEST_FILE)
+	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
 
 test_ : test_dynamic
 
 test_static :: pure_all $(MAP_TARGET)
 
 testdb_static :: pure_all $(MAP_TARGET)
-	PERL_DL_NONLAZY=1 ./$(MAP_TARGET) $(TESTDB_SW) -I$(INST_ARCHLIB) -I$(INST_LIB) -I$(PERL_ARCHLIB) -I$(PERL_LIB) $(TEST_FILE)
+	PERL_DL_NONLAZY=1 ./$(MAP_TARGET) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
 
 
 
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd:
-	@$(PERL) -e "print qq{<SOFTPKG NAME=\"GTop-Server\" VERSION=\"0,01,0,0\">\n}. qq{\t<TITLE>GTop-Server</TITLE>\n}. qq{\t<ABSTRACT></ABSTRACT>\n}. qq{\t<AUTHOR></AUTHOR>\n}. qq{\t<IMPLEMENTATION>\n}. qq{\t\t<OS NAME=\"$(OSNAME)\" />\n}. qq{\t\t<ARCHITECTURE NAME=\"i686-linux\" />\n}. qq{\t\t<CODEBASE HREF=\"\" />\n}. qq{\t</IMPLEMENTATION>\n}. qq{</SOFTPKG>\n}" > GTop-Server.ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0,01,0,0">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <TITLE>$(DISTNAME)</TITLE>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <ABSTRACT></ABSTRACT>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR></AUTHOR>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <OS NAME="$(OSNAME)" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="i686-linux-thread-multi" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '</SOFTPKG>' >> $(DISTNAME).ppd
+
 
 # --- MakeMaker pm_to_blib section:
 
 pm_to_blib: $(TO_INST_PM)
-	@$(PERL) "-I$(INST_ARCHLIB)" "-I$(INST_LIB)" \
-	"-I$(PERL_ARCHLIB)" "-I$(PERL_LIB)" -MExtUtils::Install \
-        -e "pm_to_blib({qw{$(PM_TO_BLIB)}},'$(INST_LIB)/auto')"
-	@$(TOUCH) $@
-
+	$(NOECHO) $(PERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', '\''$(PM_FILTER)'\'')'\
+	  Server.pm $(INST_LIB)/GTop/Server.pm 
+	$(NOECHO) $(TOUCH) $@
 
 # --- MakeMaker selfdocument section:
 

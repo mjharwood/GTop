@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+my $lib = "/home/stas/bin/run_check-lib.pl";
+require $lib;
+run_check(*DATA);
+
+__DATA__
+# need to test all these combinations
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.005_03 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.0 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.0-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.1 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.1-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.2 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.2-perlio Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.6.2-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.0 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.0-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.1 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.1-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.2 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.2-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.3 Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-5.8.3-ithread Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-blead Makefile.PL && make && make test && make install
+
+make clean && /usr/bin/env CCFLAGS="-g" perl-blead-ithread Makefile.PL && make && make test && make install
