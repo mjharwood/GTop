@@ -140,26 +140,6 @@ XS(XS_GTop_field_char)
     XSRETURN(1); 
 }
 
-XS(XS_GTop__possess2)
-{
-    dXSARGS;
-
-    GTop self = (GTop)SvIV((SV*)SvRV(ST(0)));
-#if 0
-    Perl_warn(aTHX_ "(self=0x%lx)->possess was : 0x%lx\n", ST(0),
-              (unsigned long)self);
-#endif
-    /* possess the guts of the original object without changing its
-     * shell */
-    sv_setiv((SV*)SvRV(ST(0)), (IV)my_gtop_new(aTHX_ self->host, self->port));
-#if 0
-    Perl_warn(aTHX_ "(self=0x%lx)->possess: got 0x%lx\n", ST(0),
-              (GTop)SvIV((SV*)SvRV(ST(0))));
-#endif
-    XSRETURN_EMPTY;
-}
-
-
 XS(XS_GTop_destroy)
 {
     dXSARGS; 
@@ -183,10 +163,6 @@ static void boot_GTop_constants(pTHX)
 		      newSViv(GLIBTOP_MAP_PERM_SHARED));
     (void)newCONSTSUB(stash, "MAP_PERM_PRIVATE", 
 		      newSViv(GLIBTOP_MAP_PERM_PRIVATE));
-
-       /* XXX: move to the right place */
-    newXS("GTop::_possess2", XS_GTop__possess2, __FILE__);
-
 }
 
 static char *netload_address_string(glibtop_netload *nl)
