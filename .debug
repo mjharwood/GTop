@@ -1,0 +1,7 @@
+file /usr/bin/perl-5.8.2-ithread
+b main
+run -Mblib -Mlib=. t/threads.t
+b perl_run
+continue
+b XS_GTop__possess
+continue
