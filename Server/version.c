@@ -22,6 +22,7 @@
 */
 
 #include <glibtop.h>
+#include <glibtop/command.h>
 #include <glibtop/error.h>
 #include <glibtop/version.h>
 
