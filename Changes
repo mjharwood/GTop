@@ -1,4 +1,9 @@
-0.15 - dev
+0.16 - dev 
+
+
+
+
+0.15 - Mon Apr 25 16:43:32 EDT 2005
 
 #include <glibtop/command.h> is needed to build against libgtop 2.9.91 
 [ville.skytta@iki.fi]
