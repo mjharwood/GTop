@@ -266,6 +266,7 @@ WriteMakefile(
    @insure,
    NAME         => 'GTop',
    VERSION_FROM => 'lib/GTop.pm',
+   DIR          => [], # XXX: libgtop 2.0+ has problems building Server/
    INC          => $inc,
    LIBS         => [$libs],
    DEFINE       => $defines,

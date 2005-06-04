@@ -1,7 +1,7 @@
 0.16 - dev 
 
-
-
+Disable the build of GTop::Server, as libgtop 2.0+ has problems
+building Server/. Most likely nobody uses it anyway, and if someone does they should let us know...
 
 0.15 - Mon Apr 25 16:43:32 EDT 2005
 
