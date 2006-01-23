@@ -60,7 +60,7 @@ local $| = 1;
 
 use Test;
 
-plan tests => 3;
+plan tests => 7;
 
 ok 1;
 
@@ -224,14 +224,24 @@ print POD <<'EOF';
 
 =head1 AUTHOR
 
+Currently maintained by Malcolm J Harwood <mjh@cpan.org>.
+
+Previously maintained by Stas Bekman <stas@stason.org>.
+
 Doug MacEachern wrote the original version.
 
-Currently it's maintained by Stas Bekman <stas@stason.org>.
 
 EOF
 
 print TEST <<EOF;
-ok 1; # XXX: need to do some real testing
+# XXX: need to do some real testing
+
+# size_string testing
+ok GTop::size_string(1_024),       "   1k";
+ok GTop::size_string(1_924),       "   2k";
+ok GTop::size_string(8_192),       "   8k";
+ok GTop::size_string(1_148_576),   " 1.1M";
+ok GTop::size_string(133_809_024), " 128M";
 
 EOF
 
