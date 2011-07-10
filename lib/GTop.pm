@@ -15,7 +15,7 @@ use DynaLoader ();
 }
 
 use constant DEBUG    => 0;
-use constant THREADED => eval { require threads };
+use constant THREADED => eval { my $ver = $threads::VERSION };
 
 require Scalar::Util if THREADED;
 
