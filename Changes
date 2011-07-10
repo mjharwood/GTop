@@ -1,3 +1,8 @@
+0.17 - Sun Jul 10 13:39:00 EDT 2011
+
+Fix check of threading enabled so it doesn't load the threading module [brendan@tucows]
+Remove Server depreciated in last release
+
 0.16 - dev 
 
 Disable the build of GTop::Server, as libgtop 2.0+ has problems
