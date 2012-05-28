@@ -1,3 +1,7 @@
+0.18 - Mon May 28 2012
+
+Remove references to Server files from Manifest. Fixes build warning (cf. rt.cpan.org #72777)
+
 0.17 - Sun Jul 10 13:39:00 EDT 2011
 
 Fix check of threading enabled so it doesn't load the threading module [brendan@tucows]

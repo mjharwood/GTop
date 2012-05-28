@@ -6,7 +6,7 @@ use DynaLoader ();
 
 {
     no strict;
-    $VERSION = '0.17';
+    $VERSION = '0.18';
 
     *dl_load_flags = DynaLoader->can('dl_load_flags');
     do {
